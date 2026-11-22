@@ -1,0 +1,16 @@
+product,current_stock,avg_daily_sales,unit_cost,lead_time_days
+Body Lotion,8,1.5,72.50,4
+Lip Gloss,6,2,28.00,3
+Body Scrub,3,1,65.00,5
+Face Cleanser,14,1.5,89.00,4
+Sunscreen,0,1.2,110.00,5
+Body Butter,20,0.8,95.00,7
+Hair Oil,4,0.9,78.00,6
+Shampoo,18,1,82.00,3
+Conditioner,12,0.7,79.00,5
+Face Serum,2,0.6,145.00,4
+Hand Cream,11,0,42.00,2
+Lip Balm,0,0,19.00,3
+Shower Gel,9,1.5,58.00,5
+Hair Mask,4,0.5,105.00,9
+Body Mist,7,1,88.00,6
