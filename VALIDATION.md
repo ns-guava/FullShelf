@@ -2,7 +2,7 @@
 
 **Status:** Product-discovery plan; completion of the proposed interviews and concierge tests has not been verified.
 **Engineering status:** A working FullShelf prototype exists. This document is a product-discovery plan, not an engineering readiness verdict. See `README.md` for implemented functionality, technical assumptions, and test instructions.
-**Scope:** FullShelf / StockWhisperer, the CSV-to-reorder-priorities prototype.
+**Scope:** FullShelf, the CSV-to-reorder-priorities prototype.
 
 Commercial assumptions and pricing experiments below are retained as historical product-discovery context. They are outside the AI engineering review scorecard and are not evidence that the planned research was completed.
 

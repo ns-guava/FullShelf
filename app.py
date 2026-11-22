@@ -1777,7 +1777,7 @@ def _render_assistant(analysis: dict | None) -> None:
         <div class="fs-card fs-chat-head">
           <div class="fs-chat-avatar">{_icon("spark", 20)}</div>
           <div>
-            <h3>Ask StockWhisperer</h3>
+            <h3>Ask FullShelf</h3>
             <p>Answers use this session's Python-calculated inventory. It cannot place orders.</p>
           </div>
         </div>
@@ -1806,7 +1806,7 @@ def _render_assistant(analysis: dict | None) -> None:
 
     st.session_state.chat_messages.append({"role": "user", "content": question})
     try:
-        with st.spinner("Checking your inventory with StockWhisperer..."):
+        with st.spinner("Checking your inventory with FullShelf..."):
             answer = answer_inventory_question(
                 question,
                 analysis,
@@ -1818,7 +1818,7 @@ def _render_assistant(analysis: dict | None) -> None:
             {"role": "assistant", "content": f"AI assistant unavailable: {exc}"}
         )
     except Exception:
-        logging.exception("Unexpected StockWhisperer UI error")
+        logging.exception("Unexpected FullShelf UI error")
         st.session_state.chat_messages.append(
             {
                 "role": "assistant",
