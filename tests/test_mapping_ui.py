@@ -1,8 +1,11 @@
 import hashlib
+from pathlib import Path
 
 from streamlit.testing.v1 import AppTest
 
 from inventory_engine import inspect_inventory_file
+
+APP_PATH = Path(__file__).resolve().parents[1] / "app.py"
 
 AMBIGUOUS_CSV = (
     "Product,Product Name,Stock,Daily Sales,Unit Cost,Lead Time\n"
@@ -12,7 +15,7 @@ AMBIGUOUS_CSV = (
 
 def _mapping_app() -> AppTest:
     report = inspect_inventory_file(AMBIGUOUS_CSV, "ambiguous.csv")
-    app = AppTest.from_file("app.py", default_timeout=60)
+    app = AppTest.from_file(str(APP_PATH), default_timeout=60)
     app.run()
     app.session_state["page"] = "Inventory"
     app.session_state["pending_mapping"] = {
@@ -54,7 +57,7 @@ def test_gemini_suggestions_require_explicit_consent():
 def test_staged_gemini_suggestions_prefill_the_dropdowns_before_widgets_exist():
     report = inspect_inventory_file(AMBIGUOUS_CSV, "ambiguous.csv")
     fingerprint = hashlib.sha256(AMBIGUOUS_CSV + b"\0").hexdigest()[:12]
-    app = AppTest.from_file("app.py", default_timeout=60)
+    app = AppTest.from_file(str(APP_PATH), default_timeout=60)
     app.run()
     app.session_state["page"] = "Inventory"
     app.session_state["pending_mapping"] = {
